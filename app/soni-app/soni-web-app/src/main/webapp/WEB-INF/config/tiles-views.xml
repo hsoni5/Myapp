@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+	"-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+	"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+	<definition name="personHome" extends="DefaultTemplate">
+	    <put-attribute name="body"	value="/views/profile/index.jsp" />
+	</definition>
+	
+		<definition name="personList" extends="DefaultTemplate">
+	    <put-attribute name="body"	value="/views/profile/personList.jsp" />
+	</definition>
+	<definition name="editProfile" extends="DefaultTemplate">
+	    <put-attribute name="body"	value="/views/profile/editProfile.jsp" />
+	</definition>
+	
+	<definition name="users" extends="DefaultTemplate">
+	    <put-attribute name="body"	value="/views/userMgm/user.jsp" />
+	</definition>
+	
+	<definition name="addCandidate" extends="DefaultTemplate">
+	    <put-attribute name="body"	value="/views/esystem/addCandidate.jsp" />
+	</definition>
+	
+	<!-- <definition name="candidateHome" extends="DefaultTemplate">
+	    <put-attribute name="body"	value="/views/candidate/candidate.jsp" />
+	</definition>
+	
+	
+	
+	<definition name="callFeedback" extends="DefaultTemplate">
+	    <put-attribute name="body"	value="/views/candidate/CallFeedback.jsp" />
+	</definition>
+	
+	
+	<definition name="editCandidate" extends="DefaultTemplate">
+	    <put-attribute name="body"	value="/views/candidate/edit.jsp" />
+	</definition>
+	
+	
+	<definition name="searchCandidate" extends="DefaultTemplate">
+	    <put-attribute name="body"	value="/views/candidate/search.jsp" />
+	</definition>
+	 -->
+</tiles-definitions>

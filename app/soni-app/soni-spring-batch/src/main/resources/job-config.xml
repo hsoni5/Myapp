@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:batch="http://www.springframework.org/schema/batch" xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:file="http://www.springframework.org/schema/integration/file"	
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans	
+	http://www.springframework.org/schema/beans/spring-beans.xsd 	
+	http://www.springframework.org/schema/integration/file 
+	http://www.springframework.org/schema/integration/file/spring-integration-file.xsd
+    http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/batch 
+    http://www.springframework.org/schema/batch/spring-batch.xsd
+    http://www.springframework.org/schema/context 
+    http://www.springframework.org/schema/context/spring-context.xsd 	
+	http://www.springframework.org/schema/util 
+	http://www.springframework.org/schema/util/spring-util.xsd
+	http://www.springframework.org/schema/task
+    http://www.springframework.org/schema/task/spring-task.xsd
+    http://www.springframework.org/schema/jdbc 
+	http://www.springframework.org/schema/jdbc/spring-jdbc.xsd">
+	
+	<import resource="classpath:context.config.xml"/>
+ 
+   
+ 
+    <!-- ItemReader which reads data from XML file -->
+    <bean id="xmlItemReader" class="org.springframework.batch.item.xml.StaxEventItemReader">
+ 
+        <property name="resource" value="classpath:examResult.xml" />
+ 
+        <property name="fragmentRootElementName" value="ExamResult" />
+ 
+        <property name="unmarshaller">
+            <bean class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
+                <property name="classesToBeBound">
+                    <list>
+                        <value>com.soni.app.batch.model.ExamResult</value>
+                    </list>
+                </property>
+            </bean>
+        </property>
+    </bean>
+ 
+    <!-- ItemWriter which writes data to database -->
+    <bean id="databaseItemWriter" class="org.springframework.batch.item.database.JdbcBatchItemWriter">
+        <property name="dataSource" ref="dataSource" />
+        <property name="sql">
+            <value>
+                <![CDATA[        
+                    insert into EXAM_RESULT(STUDENT_NAME, DOB, PERCENTAGE) 
+                    values (?, ?, ?)
+                ]]>
+            </value>
+        </property>
+ 
+        <!-- We need a custom setter to handle the conversion between Jodatime LocalDate and MySQL DATE -->
+        <property name="ItemPreparedStatementSetter">
+            <bean class="com.soni.app.batch.dao.ExamResultItemPreparedStatementSetter" />
+        </property>
+  </bean>
+ 
+    <!-- Optional ItemProcessor to perform business logic/filtering on the input records -->
+    <bean id="itemProcessor" class="com.soni.app.batch.processor.ExamResultItemProcessor" />
+ 
+    <!-- Optional JobExecutionListener to perform business logic before and after the job -->
+    <bean id="jobListener" class="com.soni.app.batch.listner.ExamResultJobListener" />
+ 
+    <!-- Step will need a transaction manager -->
+    <bean id="transactionManager" class="org.springframework.batch.support.transaction.ResourcelessTransactionManager" />
+ 
+    <!-- Actual Job -->
+    <batch:job id="examResultJob">
+        <batch:step id="step1">
+            <batch:tasklet transaction-manager="transactionManager">
+                <batch:chunk reader="xmlItemReader" writer="databaseItemWriter"
+                    processor="itemProcessor" commit-interval="10" />
+            </batch:tasklet>
+        </batch:step>
+        <batch:listeners>
+            <batch:listener ref="jobListener" />
+        </batch:listeners>
+    </batch:job>
+	
+	
+	<!--#################################################################################################### -->
+	
+	<!-- Actual Job -->
+<batch:job id="listBatchJob">
+        <batch:step id="step2">
+            <batch:tasklet transaction-manager="transactionManager">
+                <batch:chunk reader="mylistItemReader" writer="customTradWriter"   processor="myListItemProcessor" commit-interval="5" />
+            </batch:tasklet>
+        </batch:step>
+        <batch:listeners>
+            <batch:listener ref="jobListener" />
+        </batch:listeners>
+</batch:job>
+    
+<bean id="tradRequest" class="com.soni.app.batch.model.TraditionalLifeAddPolicyRequest"/>
+
+<bean id="mylistItemReader" class="com.soni.app.batch.reader.TraditionalLifePolicyReader">
+<constructor-arg ref="tradRequest"/></bean>
+<bean id="myListItemProcessor" class="com.soni.app.batch.processor.MyListItemProcessor"/>
+<bean id="customTradWriter" class="com.soni.app.batch.writer.CustomTraditionalLifeAddPolicyWriter" />
+
+</beans>
+

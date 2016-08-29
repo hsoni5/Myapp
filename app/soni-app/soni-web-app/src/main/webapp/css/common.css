@@ -1,0 +1,182 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: background;
+  font-size: 62.5%;
+  padding: 0;
+  margin: 0;
+}
+
+.wrapper {
+  width: 900px;
+  font-size: 1.6em;
+  margin: 0 auto;
+  background-color: green;
+}
+
+p {
+  padding: 0 0 1em 0;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+header {
+  text-align: right;
+  background-color: brown;
+  color: white;
+  padding: 2em;
+  font-family: 'Permanent Marker', fantasy;
+  text-shadow: 2px 2px 4px rgba(1, 1, 1, 0.5);
+}
+
+main {
+  padding: 2em;
+  position: relative;
+}
+
+.art-img {
+  float: left;
+  margin: 10px;
+}
+
+h2{
+  margin-bottom: 1em;
+}
+
+hr {
+  margin: 10px;
+}
+aside {
+  width: 250px;
+
+ }
+
+main {
+  float: left;
+  width: 550px;
+}
+
+.wrapper {
+  /* Hide the aside sidebar overflow */
+  overflow: hidden;
+}
+
+
+/* For Left Nav */
+
+.left-nav {
+  width: 200px;
+  float: left;
+  background-color: #FFE4C4;
+  list-style-type: none;
+  padding: 0px;
+
+  /* Forces the sidebar to stretch to the same height as content */
+  padding-bottom: 5000px;
+  margin-bottom: -5000px;
+}
+
+.left-nav ul {
+  padding: 0px;
+}
+
+.left-nav li {
+  display: block;
+  border-bottom: 1px dotted brown;
+  padding: 0.5em 0 0.5em 0.5em;
+}
+
+
+footer {
+  clear: both;
+  background-color: brown;
+  height: 100px;
+  width: 900px;
+  margin: 0 auto;
+}
+
+.formRowContainer {
+	/*clear: both;*/
+	width: 100%;
+	padding-top: 10px;
+	overflow:hidden;
+}
+
+/* hack code style is begin */
+.clearfix:after {
+	clear:both;
+	content:'.';
+	display:block;
+	visibility:hidden;
+	height:0;
+}
+.clearfix {
+	display:inline-block;
+}
+* html .clearfix {
+	height:1%;
+}
+.clearfix {
+	display:block;
+}
+*+html .clearfix {
+	display: inline-block;
+}
+
+
+/* Main DIV */
+.mainDiv {
+	width: 560px;
+	padding: 20px;
+	height: auto;
+}
+/* Left Form DIV */
+.leftDiv {
+	width: 190px;
+	margin: 0 10px 0 0;
+	padding: 19px;
+	float: left;
+	text-align: right;
+	1
+}
+
+
+
+#Register .leftDiv {
+	width: 143px;
+	margin: 0 10px 0 0;
+	padding: 0px;
+	float: left;
+	text-align: right;
+	
+}
+/* Right DIV */
+.rightDiv {
+float:left;
+	margin: 0px;
+	padding: 0px;
+	text-align: left;
+	/*margin-left:10px;*/
+}
+.formRowContainer {
+	/*clear: both;*/
+	width: 100%;
+	padding-top: 10px;
+	overflow:hidden;
+}
+.formSectionHeading {
+	clear: both;
+	font-weight:bold;
+	padding-left:10px;
+	background-color: #f2f2f2;
+	margin:20px 0 10px 0;
+}
+
+.width-500 {
+	width:500px;
+}

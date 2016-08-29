@@ -1,0 +1,303 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00000000726a59f3, pid=7756, tid=7120
+#
+# JRE version: Java(TM) SE Runtime Environment (7.0_67-b01) (build 1.7.0_67-b01)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (24.65-b04 mixed mode windows-amd64 compressed oops)
+# Problematic frame:
+# V  [jvm.dll+0x3a59f3]
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.sun.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000002a0c000):  GCTaskThread [stack: 0x0000000006120000,0x0000000006220000] [id=7120]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x0000007300730073
+
+Registers:
+RAX=0x00000000728c6401, RBX=0x00000000eb47fdb0, RCX=0x000000000621f2d0, RDX=0x0000007300730073
+RSP=0x000000000621ea10, RBP=0x0000000000000008, RSI=0x0000000000000081, RDI=0x0000000000000000
+R8 =0x000000000621ec80, R9 =0x00000000ec3099c0, R10=0x0000000000000000, R11=0x0000000000000064
+R12=0x0000000000000008, R13=0x000000000621eb20, R14=0x000000000621eb80, R15=0x0000000002a0c790
+RIP=0x00000000726a59f3, EFLAGS=0x0000000000010202
+
+Top of Stack: (sp=0x000000000621ea10)
+0x000000000621ea10:   000000000aee20c0 0000000002a0ce48
+0x000000000621ea20:   000000000621eb80 000000000621eb20
+0x000000000621ea30:   000000000621eb20 00000000724c9822
+0x000000000621ea40:   000000000294f6d0 0000000000000008
+0x000000000621ea50:   0000000000000081 0000000000000000
+0x000000000621ea60:   0000000000000007 00000000723a462e
+0x000000000621ea70:   0000000000000080 00000000723e27cd
+0x000000000621ea80:   0000000002a0ce40 0000000002a0ce48
+0x000000000621ea90:   0000000000000009 000000000621f2f0
+0x000000000621eaa0:   000000000621ecb0 00000000724ca3b7
+0x000000000621eab0:   000000000299e800 0000000002a0ce40
+0x000000000621eac0:   000000000621ebb0 000000000621f2d0
+0x000000000621ead0:   0000000002b6d920 0000000002b6d920
+0x000000000621eae0:   0000000702b6dd01 0000000002a0c000
+0x000000000621eaf0:   0000000002b6dde0 00000000bca6a581
+0x000000000621eb00:   00000000000000b7 0000000002a0ce40 
+
+Instructions: (pc=0x00000000726a59f3)
+0x00000000726a59d3:   83 ec 20 48 8b da 48 8b 12 48 85 d2 0f 84 89 00
+0x00000000726a59e3:   00 00 48 3b 15 04 75 3b 00 0f 93 c0 84 c0 74 7b
+0x00000000726a59f3:   48 8b 02 48 8b 49 18 24 03 3c 03 75 1f 48 8b 12
+0x00000000726a5a03:   80 3d 64 37 35 00 00 74 0d 0f b6 c2 24 07 3c 05 
+
+
+Register to memory mapping:
+
+RAX=0x00000000728c6401 is an unknown value
+RBX=0x00000000eb47fdb0 is an unknown value
+RCX=0x000000000621f2d0 is an unknown value
+RDX=0x0000007300730073 is an unknown value
+RSP=0x000000000621ea10 is an unknown value
+RBP=0x0000000000000008 is an unknown value
+RSI=0x0000000000000081 is an unknown value
+RDI=0x0000000000000000 is an unknown value
+R8 =0x000000000621ec80 is an unknown value
+R9 =0x00000000ec3099c0 is an oop
+[Ljava.lang.String; 
+ - klass: 'java/lang/String'[]
+ - length: 0
+R10=0x0000000000000000 is an unknown value
+R11=0x0000000000000064 is an unknown value
+R12=0x0000000000000008 is an unknown value
+R13=0x000000000621eb20 is an unknown value
+R14=0x000000000621eb80 is an unknown value
+R15=0x0000000002a0c790 is an unknown value
+
+
+Stack: [0x0000000006120000,0x0000000006220000],  sp=0x000000000621ea10,  free space=1018k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x3a59f3]
+
+[error occurred during error reporting (printing native stack), id 0xc0000005]
+
+JavaThread 0x000000000299e800 (nid = 1072) was being processed
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+v  ~RuntimeStub::_new_array_Java
+J 40 C2 java.lang.AbstractStringBuilder.append(Ljava/lang/String;)Ljava/lang/AbstractStringBuilder; (48 bytes) @ 0x0000000002b6db78 [0x0000000002b6d920+0x258]
+j  java.lang.StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;+2
+j  java.net.URLStreamHandler.parseURL(Ljava/net/URL;Ljava/lang/String;II)V+741
+j  sun.net.www.protocol.file.Handler.parseURL(Ljava/net/URL;Ljava/lang/String;II)V+14
+j  java.net.URL.<init>(Ljava/net/URL;Ljava/lang/String;Ljava/net/URLStreamHandler;)V+504
+j  java.net.URL.<init>(Ljava/net/URL;Ljava/lang/String;)V+4
+j  sun.misc.URLClassPath$FileLoader.getResource(Ljava/lang/String;Z)Lsun/misc/Resource;+28
+j  sun.misc.URLClassPath.getResource(Ljava/lang/String;Z)Lsun/misc/Resource;+53
+j  java.net.URLClassLoader$1.run()Ljava/lang/Class;+26
+j  java.net.URLClassLoader$1.run()Ljava/lang/Object;+1
+v  ~StubRoutines::call_stub
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedExceptionAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+0
+j  java.net.URLClassLoader.findClass(Ljava/lang/String;)Ljava/lang/Class;+13
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+70
+j  sun.misc.Launcher$AppClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+36
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class;+3
+v  ~StubRoutines::call_stub
+j  org.springframework.batch.core.configuration.xml.AbstractFlowParser.getNextElements(Lorg/springframework/beans/factory/xml/ParserContext;Ljava/lang/String;Lorg/springframework/beans/factory/config/BeanDefinition;Lorg/w3c/dom/Element;)Ljava/util/Collection;+190
+j  org.springframework.batch.core.configuration.xml.InlineStepParser.parse(Lorg/w3c/dom/Element;Lorg/springframework/beans/factory/xml/ParserContext;Ljava/lang/String;)Ljava/util/Collection;+59
+j  org.springframework.batch.core.configuration.xml.AbstractFlowParser.doParse(Lorg/w3c/dom/Element;Lorg/springframework/beans/factory/xml/ParserContext;Lorg/springframework/beans/factory/support/BeanDefinitionBuilder;)V+143
+j  org.springframework.batch.core.configuration.xml.InlineFlowParser.doParse(Lorg/w3c/dom/Element;Lorg/springframework/beans/factory/xml/ParserContext;Lorg/springframework/beans/factory/support/BeanDefinitionBuilder;)V+44
+j  org.springframework.beans.factory.xml.AbstractSingleBeanDefinitionParser.parseInternal(Lorg/w3c/dom/Element;Lorg/springframework/beans/factory/xml/ParserContext;)Lorg/springframework/beans/factory/support/AbstractBeanDefinition;+120
+j  org.springframework.beans.factory.xml.AbstractBeanDefinitionParser.parse(Lorg/w3c/dom/Element;Lorg/springframework/beans/factory/xml/ParserContext;)Lorg/springframework/beans/factory/config/BeanDefinition;+3
+j  org.springframework.batch.core.configuration.xml.JobParser.doParse(Lorg/w3c/dom/Element;Lorg/springframework/beans/factory/xml/ParserContext;Lorg/springframework/beans/factory/support/BeanDefinitionBuilder;)V+326
+j  org.springframework.beans.factory.xml.AbstractSingleBeanDefinitionParser.parseInternal(Lorg/w3c/dom/Element;Lorg/springframework/beans/factory/xml/ParserContext;)Lorg/springframework/beans/factory/support/AbstractBeanDefinition;+120
+j  org.springframework.beans.factory.xml.AbstractBeanDefinitionParser.parse(Lorg/w3c/dom/Element;Lorg/springframework/beans/factory/xml/ParserContext;)Lorg/springframework/beans/factory/config/BeanDefinition;+3
+j  org.springframework.beans.factory.xml.NamespaceHandlerSupport.parse(Lorg/w3c/dom/Element;Lorg/springframework/beans/factory/xml/ParserContext;)Lorg/springframework/beans/factory/config/BeanDefinition;+8
+j  org.springframework.beans.factory.xml.BeanDefinitionParserDelegate.parseCustomElement(Lorg/w3c/dom/Element;Lorg/springframework/beans/factory/config/BeanDefinition;)Lorg/springframework/beans/factory/config/BeanDefinition;+74
+j  org.springframework.beans.factory.xml.BeanDefinitionParserDelegate.parseCustomElement(Lorg/w3c/dom/Element;)Lorg/springframework/beans/factory/config/BeanDefinition;+3
+j  org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.parseBeanDefinitions(Lorg/w3c/dom/Element;Lorg/springframework/beans/factory/xml/BeanDefinitionParserDelegate;)V+76
+j  org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.doRegisterBeanDefinitions(Lorg/w3c/dom/Element;)V+84
+j  org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.registerBeanDefinitions(Lorg/w3c/dom/Document;Lorg/springframework/beans/factory/xml/XmlReaderContext;)V+25
+j  org.springframework.beans.factory.xml.XmlBeanDefinitionReader.registerBeanDefinitions(Lorg/w3c/dom/Document;Lorg/springframework/core/io/Resource;)I+33
+j  org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(Lorg/xml/sax/InputSource;Lorg/springframework/core/io/Resource;)I+10
+j  org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(Lorg/springframework/core/io/support/EncodedResource;)I+166
+j  org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(Lorg/springframework/core/io/Resource;)I+9
+j  org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions([Lorg/springframework/core/io/Resource;)I+34
+j  org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(Ljava/lang/String;Ljava/util/Set;)I+63
+j  org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(Ljava/lang/String;)I+3
+j  org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions([Ljava/lang/String;)I+34
+j  org.springframework.context.support.AbstractXmlApplicationContext.loadBeanDefinitions(Lorg/springframework/beans/factory/xml/XmlBeanDefinitionReader;)V+26
+j  org.springframework.context.support.AbstractXmlApplicationContext.loadBeanDefinitions(Lorg/springframework/beans/factory/support/DefaultListableBeanFactory;)V+41
+j  org.springframework.context.support.AbstractRefreshableApplicationContext.refreshBeanFactory()V+35
+j  org.springframework.context.support.AbstractApplicationContext.obtainFreshBeanFactory()Lorg/springframework/beans/factory/config/ConfigurableListableBeanFactory;+1
+j  org.springframework.context.support.AbstractApplicationContext.refresh()V+12
+j  org.springframework.context.support.ClassPathXmlApplicationContext.<init>([Ljava/lang/String;ZLorg/springframework/context/ApplicationContext;)V+15
+j  org.springframework.context.support.ClassPathXmlApplicationContext.<init>(Ljava/lang/String;)V+11
+j  com.soni.app.batch.test.MyJob.main([Ljava/lang/String;)V+9
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00000000088b6000 JavaThread "Service Thread" daemon [_thread_blocked, id=5216, stack(0x000000000a630000,0x000000000a730000)]
+  0x00000000088b4000 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=8704, stack(0x000000000a530000,0x000000000a630000)]
+  0x00000000088b2800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=11100, stack(0x000000000a430000,0x000000000a530000)]
+  0x000000000889e000 JavaThread "JDWP Command Reader" daemon [_thread_in_native, id=4264, stack(0x000000000a330000,0x000000000a430000)]
+  0x000000000889b800 JavaThread "JDWP Event Helper Thread" daemon [_thread_blocked, id=5124, stack(0x000000000a230000,0x000000000a330000)]
+  0x0000000008897800 JavaThread "JDWP Transport Listener: dt_socket" daemon [_thread_blocked, id=4952, stack(0x000000000a130000,0x000000000a230000)]
+  0x0000000008886800 JavaThread "Attach Listener" daemon [_thread_blocked, id=10828, stack(0x0000000009cf0000,0x0000000009df0000)]
+  0x0000000008883800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=9064, stack(0x0000000009bf0000,0x0000000009cf0000)]
+  0x0000000008852800 JavaThread "Finalizer" daemon [_thread_blocked, id=672, stack(0x0000000009af0000,0x0000000009bf0000)]
+  0x0000000008849800 JavaThread "Reference Handler" daemon [_thread_blocked, id=7696, stack(0x00000000099f0000,0x0000000009af0000)]
+  0x000000000299e800 JavaThread "main" [_thread_blocked, id=1072, stack(0x0000000002850000,0x0000000002950000)]
+
+Other Threads:
+  0x0000000008843000 VMThread [stack: 0x00000000098f0000,0x00000000099f0000] [id=5880]
+  0x00000000088cb800 WatcherThread [stack: 0x000000000a730000,0x000000000a830000] [id=764]
+
+=>0x0000000002a0c000 (exited) GCTaskThread [stack: 0x0000000006120000,0x0000000006220000] [id=7120]
+
+VM state:at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00000000029f0550] Threads_lock - owner thread: 0x0000000008843000
+[0x00000000029f08d0] Heap_lock - owner thread: 0x000000000299e800
+
+Heap
+ PSYoungGen      total 18944K, used 16384K [0x00000000eb300000, 0x00000000ec800000, 0x0000000100000000)
+  eden space 16384K, 100% used [0x00000000eb300000,0x00000000ec300000,0x00000000ec300000)
+  from space 2560K, 0% used [0x00000000ec580000,0x00000000ec580000,0x00000000ec800000)
+  to   space 2560K, 68% used [0x00000000ec300000,0x00000000ec4b8000,0x00000000ec580000)
+ ParOldGen       total 42496K, used 72K [0x00000000c1a00000, 0x00000000c4380000, 0x00000000eb300000)
+  object space 42496K, 0% used [0x00000000c1a00000,0x00000000c1a12010,0x00000000c4380000)
+ PSPermGen       total 21504K, used 9285K [0x00000000bc800000, 0x00000000bdd00000, 0x00000000c1a00000)
+  object space 21504K, 43% used [0x00000000bc800000,0x00000000bd1114a8,0x00000000bdd00000)
+
+Card table byte_map: [0x0000000005bb0000,0x0000000005dd0000] byte_map_base: 0x00000000055cc000
+
+Polling page: 0x00000000009f0000
+
+Code Cache  [0x0000000002af0000, 0x0000000002d60000, 0x0000000005af0000)
+ total_blobs=318 nmethods=61 adapters=217 free_code_cache=48548Kb largest_free_block=49694144
+
+Compilation events (10 events):
+Event: 33.963 Thread 0x00000000088b2800   57             java.util.Arrays::copyOfRange (63 bytes)
+Event: 33.965 Thread 0x00000000088b2800 nmethod 57 0x0000000002b82550 code [0x0000000002b826a0, 0x0000000002b82898]
+Event: 33.977 Thread 0x00000000088b4000   58             java.lang.String::<init> (67 bytes)
+Event: 33.980 Thread 0x00000000088b2800   59             java.util.ArrayList::size (5 bytes)
+Event: 33.980 Thread 0x00000000088b2800 nmethod 59 0x0000000002b742d0 code [0x0000000002b74400, 0x0000000002b74458]
+Event: 33.980 Thread 0x00000000088b4000 nmethod 58 0x0000000002b6cad0 code [0x0000000002b6cc20, 0x0000000002b6cf18]
+Event: 33.990 Thread 0x00000000088b2800   60             sun.misc.MetaIndex::mayContain (51 bytes)
+Event: 33.996 Thread 0x00000000088b2800 nmethod 60 0x0000000002b67610 code [0x0000000002b67780, 0x0000000002b67b88]
+Event: 34.003 Thread 0x00000000088b4000   61             java.util.HashMap::hash (55 bytes)
+Event: 34.005 Thread 0x00000000088b4000 nmethod 61 0x0000000002b67210 code [0x0000000002b67360, 0x0000000002b674c8]
+
+GC Heap History (1 events):
+Event: 34.027 GC heap before
+{Heap before GC invocations=1 (full 0):
+ PSYoungGen      total 18944K, used 16384K [0x00000000eb300000, 0x00000000ec800000, 0x0000000100000000)
+  eden space 16384K, 100% used [0x00000000eb300000,0x00000000ec300000,0x00000000ec300000)
+  from space 2560K, 0% used [0x00000000ec580000,0x00000000ec580000,0x00000000ec800000)
+  to   space 2560K, 0% used [0x00000000ec300000,0x00000000ec300000,0x00000000ec580000)
+ ParOldGen       total 42496K, used 0K [0x00000000c1a00000, 0x00000000c4380000, 0x00000000eb300000)
+  object space 42496K, 0% used [0x00000000c1a00000,0x00000000c1a00000,0x00000000c4380000)
+ PSPermGen       total 21504K, used 9285K [0x00000000bc800000, 0x00000000bdd00000, 0x00000000c1a00000)
+  object space 21504K, 43% used [0x00000000bc800000,0x00000000bd1114a8,0x00000000bdd00000)
+
+Deoptimization events (1 events):
+Event: 33.694 Thread 0x000000000299e800 Uncommon trap: reason=null_check action=make_not_entrant pc=0x0000000002b573ac method=java.lang.String.equals(Ljava/lang/Object;)Z @ 8
+
+Internal exceptions (10 events):
+Event: 34.019 Thread 0x000000000299e800 Threw 0x00000000ec2a74f8 at C:\re\jdk7u67\1368\hotspot\src\share\vm\prims\jvm.cpp:1244
+Event: 34.020 Thread 0x000000000299e800 Threw 0x00000000ec2ac448 at C:\re\jdk7u67\1368\hotspot\src\share\vm\prims\jvm.cpp:1244
+Event: 34.020 Thread 0x000000000299e800 Threw 0x00000000ec2af9e8 at C:\re\jdk7u67\1368\hotspot\src\share\vm\prims\jvm.cpp:1244
+Event: 34.021 Thread 0x000000000299e800 Threw 0x00000000ec2b2c28 at C:\re\jdk7u67\1368\hotspot\src\share\vm\prims\jvm.cpp:1244
+Event: 34.021 Thread 0x000000000299e800 Threw 0x00000000ec2b6d98 at C:\re\jdk7u67\1368\hotspot\src\share\vm\prims\jvm.cpp:1244
+Event: 34.021 Thread 0x000000000299e800 Threw 0x00000000ec2baa90 at C:\re\jdk7u67\1368\hotspot\src\share\vm\prims\jvm.cpp:1244
+Event: 34.022 Thread 0x000000000299e800 Threw 0x00000000ec2c6998 at C:\re\jdk7u67\1368\hotspot\src\share\vm\prims\jvm.cpp:1244
+Event: 34.023 Thread 0x000000000299e800 Threw 0x00000000ec2d4478 at C:\re\jdk7u67\1368\hotspot\src\share\vm\prims\jvm.cpp:1244
+Event: 34.025 Thread 0x000000000299e800 Threw 0x00000000ec2f8600 at C:\re\jdk7u67\1368\hotspot\src\share\vm\prims\jvm.cpp:1244
+Event: 34.026 Thread 0x000000000299e800 Threw 0x00000000ec2ff5d0 at C:\re\jdk7u67\1368\hotspot\src\share\vm\prims\jvm.cpp:1244
+
+Events (10 events):
+Event: 34.021 loading class 0x000000000ac0b680 done
+Event: 34.022 loading class 0x000000000ac19270
+Event: 34.022 loading class 0x000000000ac19270 done
+Event: 34.023 loading class 0x000000000ac0baa0
+Event: 34.023 loading class 0x000000000ac0baa0 done
+Event: 34.025 loading class 0x000000000ac19b10
+Event: 34.025 loading class 0x000000000ac19b10 done
+Event: 34.026 loading class 0x000000000b26b5f0
+Event: 34.026 loading class 0x000000000b26b5f0 done
+Event: 34.026 Executing VM operation: ParallelGCFailedAllocation
+
+
+Dynamic libraries:
+0x00007ff68fdb0000 - 0x00007ff68fde3000 	C:\Program Files\Java\jdk1.7.0_67\bin\javaw.exe
+0x00007ffe50280000 - 0x00007ffe50441000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffe4dad0000 - 0x00007ffe4db7d000 	C:\WINDOWS\system32\KERNEL32.DLL
+0x00007ffe4d430000 - 0x00007ffe4d618000 	C:\WINDOWS\system32\KERNELBASE.dll
+0x00007ffe4f840000 - 0x00007ffe4f8e7000 	C:\WINDOWS\system32\ADVAPI32.dll
+0x00007ffe501e0000 - 0x00007ffe5027d000 	C:\WINDOWS\system32\msvcrt.dll
+0x00007ffe4f310000 - 0x00007ffe4f36b000 	C:\WINDOWS\system32\sechost.dll
+0x00007ffe4fab0000 - 0x00007ffe4fbcc000 	C:\WINDOWS\system32\RPCRT4.dll
+0x00007ffe4f370000 - 0x00007ffe4f4c6000 	C:\WINDOWS\system32\USER32.dll
+0x00007ffe4f4d0000 - 0x00007ffe4f656000 	C:\WINDOWS\system32\GDI32.dll
+0x00007ffe401a0000 - 0x00007ffe40414000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.10586.494_none_a2d8b04ea53e3145\COMCTL32.dll
+0x00007ffe4d830000 - 0x00007ffe4daad000 	C:\WINDOWS\system32\combase.dll
+0x00007ffe4cbe0000 - 0x00007ffe4cc4a000 	C:\WINDOWS\system32\bcryptPrimitives.dll
+0x00007ffe501a0000 - 0x00007ffe501db000 	C:\WINDOWS\system32\IMM32.DLL
+0x0000000071300000 - 0x00000000713d2000 	C:\Program Files\Java\jdk1.7.0_67\jre\bin\msvcr100.dll
+0x0000000072300000 - 0x0000000072ad2000 	C:\Program Files\Java\jdk1.7.0_67\jre\bin\server\jvm.dll
+0x00007ffe4f8f0000 - 0x00007ffe4f8f8000 	C:\WINDOWS\system32\PSAPI.DLL
+0x00007ffe4abb0000 - 0x00007ffe4abd3000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffe3e3a0000 - 0x00007ffe3e3a9000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ffe4dbe0000 - 0x00007ffe4dc4b000 	C:\WINDOWS\system32\WS2_32.dll
+0x00007ffe4ab80000 - 0x00007ffe4abac000 	C:\WINDOWS\SYSTEM32\WINMMBASE.dll
+0x00007ffe4cb90000 - 0x00007ffe4cbd3000 	C:\WINDOWS\system32\cfgmgr32.dll
+0x0000000072140000 - 0x000000007214f000 	C:\Program Files\Java\jdk1.7.0_67\jre\bin\verify.dll
+0x0000000072110000 - 0x0000000072138000 	C:\Program Files\Java\jdk1.7.0_67\jre\bin\java.dll
+0x00000000712c0000 - 0x00000000712f5000 	C:\Program Files\Java\jdk1.7.0_67\jre\bin\jdwp.dll
+0x00000000712b0000 - 0x00000000712b8000 	C:\Program Files\Java\jdk1.7.0_67\jre\bin\npt.dll
+0x00000000720f0000 - 0x0000000072105000 	C:\Program Files\Java\jdk1.7.0_67\jre\bin\zip.dll
+0x00000000712a0000 - 0x00000000712a9000 	C:\Program Files\Java\jdk1.7.0_67\jre\bin\dt_socket.dll
+0x00007ffe40cd0000 - 0x00007ffe40ce6000 	C:\WINDOWS\system32\napinsp.dll
+0x00007ffe40c60000 - 0x00007ffe40c7a000 	C:\WINDOWS\system32\pnrpnsp.dll
+0x00007ffe49940000 - 0x00007ffe49958000 	C:\WINDOWS\system32\NLAapi.dll
+0x00007ffe4c170000 - 0x00007ffe4c1cc000 	C:\WINDOWS\System32\mswsock.dll
+0x00007ffe4b2f0000 - 0x00007ffe4b39a000 	C:\WINDOWS\SYSTEM32\DNSAPI.dll
+0x00007ffe4fce0000 - 0x00007ffe4fce8000 	C:\WINDOWS\system32\NSI.dll
+0x00007ffe40800000 - 0x00007ffe4080d000 	C:\WINDOWS\System32\winrnr.dll
+0x00007ffe481b0000 - 0x00007ffe481c5000 	C:\WINDOWS\System32\wshbth.dll
+0x00007ffe43210000 - 0x00007ffe43277000 	C:\WINDOWS\System32\fwpuclnt.dll
+0x00007ffe4c7d0000 - 0x00007ffe4c7f9000 	C:\WINDOWS\SYSTEM32\bcrypt.dll
+0x00007ffe41280000 - 0x00007ffe4128a000 	C:\Windows\System32\rasadhlp.dll
+0x0000000071ff0000 - 0x0000000072009000 	C:\Program Files\Java\jdk1.7.0_67\jre\bin\net.dll
+0x0000000071fd0000 - 0x0000000071fe1000 	C:\Program Files\Java\jdk1.7.0_67\jre\bin\nio.dll
+0x00007ffe48720000 - 0x00007ffe488ac000 	C:\WINDOWS\SYSTEM32\dbghelp.dll
+
+VM Arguments:
+jvm_args: -agentlib:jdwp=transport=dt_socket,suspend=y,address=localhost:49775 -Dfile.encoding=Cp1252 
+java_command: com.soni.app.batch.test.MyJob
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.7.0_67
+PATH=C:\Program Files\Java\jdk1.7.0_67\jre\bin;C:/Program Files/Java/jdk1.7.0_67/bin/../jre/bin/server;C:/Program Files/Java/jdk1.7.0_67/bin/../jre/bin;C:/Program Files/Java/jdk1.7.0_67/bin/../jre/lib/amd64;C:\oraclexe\app\oracle\product\10.2.0\server\bin;C:\Program Files\Java\jdk1.7.0_67/bin;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files (x86)\H2\bin;C:\Program Files (x86)\Skype\Phone\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.7.0_67\bin;E:\jars\apache-maven-3.2.5\bin;E:\jars\apache-ant-1.9.4\bin;;F:\eclipse\eclipse-jee-kepler-SR2-win32-x86_64\eclipse;
+USERNAME=hari1036
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 42 Stepping 7, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 8.1 , 64 bit Build 9600 
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 42 stepping 7, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, ht, tsc, tscinvbit
+
+Memory: 4k page, physical 4086488k(556444k free), swap 7108508k(1458904k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (24.65-b04) for windows-amd64 JRE (1.7.0_67-b01), built on Jul 25 2014 08:55:00 by "java_re" with unknown MS VC++:1600
+
+time: Sat Aug 20 18:25:53 2016
+elapsed time: 34 seconds
+

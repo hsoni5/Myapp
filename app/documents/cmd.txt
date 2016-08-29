@@ -1,0 +1,119 @@
+                            Git hub commond 
+git show-ref
+
+
+Initilize git repository 
+
+echo "# hsoni" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/hsoni6/hsoni.git
+git push -u origin master
+
+
+
+How to configure remote repository 
+
+-->git add remote origin   https://   full url 
+
+How to Check remote repository 
+
+-->git remote -v
+
+How to Remove repository 
+
+--> git remote remove origin
+
+How to Add file in repository and check the status 
+
+--->git status                untrack in red color will be shown 
+--->git add "file Name"        add or staged file 
+--->git status                 changes to be commited will be be displayed 
+---> git add --all            add all untrack file 
+---> git add.                 add all file untrack
+
+How to untrack file or remove from git index
+
+-->git rm --cached "file name"
+
+How to create ignore file in git 
+
+dotgitignore 
+
+global comitt author 
+
+--->git config --global user.name "hsoni6"
+--->git config --global user.email "hsoni6@csc.com"
+
+Git commit command in lopcal 
+
+--> git comit -m "Initial comit"
+
+Git log Command  -to check what are the previous comits file
+
+--> git log 
+
+
+To push local file in remote location or push 
+-->git remo -v
+-->git push myorigin master
+--->username : 
+--->password :
+
+How to generate SSH no need to enter    
+
+--->ssh-keygen -t rsa -c "hsoni6@csc.com"
+---> cd .ssh
+--->clip <id_rsa.pub
+
+github SSH keys add SSh kyy  
+
+title  windows hub title 
+
+ paste key
+
+--->git remote -v
+--->git remote remove myorigin
+
+
+To chek the branch 
+--->  git branch
+---> git branch "branch name"
+---> git branch
+-------green branch means current branch 
+
+to go specific branch
+--->git checkout mybranch
+git checkout -b newbranch
+----> git checkout master
+--> git branch
+--->new.txt
+--->git status
+--->git add new.txt
+--->git comit -m " file new.txt added"
+---> git push myorigin newbranch
+---> git checkout mybrach 
+--->git branch
+to mearge
+
+--->git merge newbranch
+--->git status
+--->git push myorgin mybranch
+--->git checkout master 
+--->git merge mybranch
+--->git push master
+
+  Git hub Cloning 
+To destination folder
+
+--->git clone url
+Fork ---means copy of global repositry  and make it owns copy of account
+
+--->
+Get hub pull request ---->correction of another project code  and send him request to make it changes to gis repository
+
+--->
+
+
+
