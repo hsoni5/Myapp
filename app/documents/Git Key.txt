@@ -1,0 +1,66 @@
+3eb351bba54c075ee0e9a66bf5ae3275a07ad620
+
+
+
+hsoni6@CSCINDAE707610 MINGW64 /
+$ cd D:
+
+hsoni6@CSCINDAE707610 MINGW64 /d
+$ cd So
+Software/ Soni/
+
+hsoni6@CSCINDAE707610 MINGW64 /d
+$ cd Soni
+
+hsoni6@CSCINDAE707610 MINGW64 /d/Soni
+$ cd GIT-SONI/
+
+hsoni6@CSCINDAE707610 MINGW64 /d/Soni/GIT-SONI
+$ git init
+Initialized empty Git repository in D:/Soni/GIT-SONI/.git/
+
+hsoni6@CSCINDAE707610 MINGW64 /d/Soni/GIT-SONI (master)
+$ git clone https://github.com/hsoni5/Myapp soni
+Cloning into 'soni'...
+remote: Counting objects: 624, done.
+remote: Total 624 (delta 0), reused 0 (delta 0), pack-reused 624
+Receiving objects: 100% (624/624), 4.81 MiB | 422.00 KiB/s, done.
+Resolving deltas: 100% (74/74), done.
+
+hsoni6@CSCINDAE707610 MINGW64 /d/Soni/GIT-SONI (master)
+$ git checkout development
+error: pathspec 'development' did not match any file(s) known to git.
+
+hsoni6@CSCINDAE707610 MINGW64 /d/Soni/GIT-SONI (master)
+$ cd soni/
+
+hsoni6@CSCINDAE707610 MINGW64 /d/Soni/GIT-SONI/soni (master)
+$ git checkout development
+Branch development set up to track remote branch development from origin.
+Switched to a new branch 'development'
+
+hsoni6@CSCINDAE707610 MINGW64 /d/Soni/GIT-SONI/soni (development)
+$ git remote -v
+origin  https://github.com/hsoni5/Myapp (fetch)
+origin  https://github.com/hsoni5/Myapp (push)
+
+hsoni6@CSCINDAE707610 MINGW64 /d/Soni/GIT-SONI/soni (development)
+$ git remote add upstream^C
+
+hsoni6@CSCINDAE707610 MINGW64 /d/Soni/GIT-SONI/soni (development)
+$ git remote add upstream https://github.com/hsoni5/Myapp
+
+hsoni6@CSCINDAE707610 MINGW64 /d/Soni/GIT-SONI/soni (development)
+$ git remote -v
+origin  https://github.com/hsoni5/Myapp (fetch)
+origin  https://github.com/hsoni5/Myapp (push)
+upstream        https://github.com/hsoni5/Myapp (fetch)
+upstream        https://github.com/hsoni5/Myapp (push)
+
+hsoni6@CSCINDAE707610 MINGW64 /d/Soni/GIT-SONI/soni (development)
+$ git status
+On branch development
+Your branch is up-to-date with 'origin/development'.
+nothing to commit, working tree clean
+
+hsoni6@CSCINDAE707610 MINGW64 /d/Soni/GIT-SONI/soni (development)
